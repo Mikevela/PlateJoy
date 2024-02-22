@@ -19,6 +19,20 @@ public class Recipe {
     private String name;
     private String cuisine;
     private String course;
-    private List<String> ingredients;
+    private String ingredients;
     private List<String> instructions;
+
+    // constructors, getters, adn setter
+
+    // constructors
+//    public Recipe() {
+//        //default constructor
+//    }
+//
+//    public Recipe(String name, String ingredients, String instructions, String cuisine, String course) {
+//        this.name = name;
+//        this.cuisine = cuisine;
+//        this.course
+//
+//    }
 }

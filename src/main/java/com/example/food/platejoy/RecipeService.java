@@ -13,13 +13,22 @@ public class RecipeService {
     @Autowired
     private RecipeRepository recipeRepository;
     public List<Recipe> allRecipes() {
-        List<Recipe> recipes = recipeRepository.findAll();
-        System.out.println(recipes);
-        return recipes;
-//        return recipeRepository.findAll();
+        return recipeRepository.findAll();
     }
 
-    public Optional<Recipe> singleRecipe(ObjectId id) {
-        return recipeRepository.findById(id);
+//    public Optional<Recipe> singleRecipe(ObjectId id) {
+//        return recipeRepository.findById(id);
+//    }
+
+    public Recipe saveRecipe(Recipe recipe) {
+        return recipeRepository.save(recipe);
+    }
+
+    public void deleteRecipe(ObjectId id) {
+        recipeRepository.deleteById(id);
+    }
+
+    public Recipe getRecipeById(ObjectId id) {
+        return recipeRepository.findById(id).orElse(null);
     }
 }
