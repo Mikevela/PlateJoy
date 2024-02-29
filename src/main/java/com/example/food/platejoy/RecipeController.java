@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/recipes")
@@ -20,6 +19,11 @@ public class RecipeController {
     @GetMapping
     public ResponseEntity<List<Recipe>> getAllRecipes() {
         return new ResponseEntity<List<Recipe>>(recipeService.allRecipes(), HttpStatus.OK);
+    }
+
+    @GetMapping("/secured")
+    public String secured() {
+        return "Secured!";
     }
 
 //    @GetMapping("/{id}")
